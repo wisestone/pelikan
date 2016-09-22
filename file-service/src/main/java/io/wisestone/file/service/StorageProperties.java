@@ -1,5 +1,5 @@
 /*
- * (#) io.wisestone.file.service.StorageService.java
+ * (#) io.wisestone.file.service.StorageProperties.java
  * Created on 2016-09-22
  *
  * Copyright 2015 brainage.net
@@ -18,15 +18,22 @@
  */
 package io.wisestone.file.service;
 
-import io.wisestone.file.domain.File;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author <a href="mailto:ms29.seo@gmail.com">ms29.seo</a>
+ * @author ms29.seo
  */
-public interface StorageService {
+@ConfigurationProperties(prefix = "wise.files.storage")
+public class StorageProperties {
 
-    FileMetadata store(MultipartFile file);
+    private String location = "archives";
 
-    void store(File file);
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
 }

@@ -1,5 +1,5 @@
 /*
- * (#) io.wisestone.file.service.StorageService.java
+ * (#) io.wisestone.file.service.FileSystemStoragePolicy.java
  * Created on 2016-09-22
  *
  * Copyright 2015 brainage.net
@@ -18,15 +18,11 @@
  */
 package io.wisestone.file.service;
 
-import io.wisestone.file.domain.File;
-import org.springframework.web.multipart.MultipartFile;
-
 /**
- * @author <a href="mailto:ms29.seo@gmail.com">ms29.seo</a>
+ * @author ms29.seo
  */
-public interface StorageService {
+public interface FileSystemStoragePolicy {
 
-    FileMetadata store(MultipartFile file);
+    FileMetadata applyPolicy(String originalFilename);
 
-    void store(File file);
 }

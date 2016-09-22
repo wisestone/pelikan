@@ -20,6 +20,8 @@ package io.wisestone.file.service;
 
 import io.wisestone.file.domain.File;
 import io.wisestone.file.domain.FileJpaRepository;
+import io.wisestone.file.service.FileKeyGenerator;
+import io.wisestone.file.service.FileService;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

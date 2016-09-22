@@ -1,5 +1,5 @@
 /*
- * (#) io.wisestone.file.service.StorageService.java
+ * (#) io.wisestone.file.service.StorageException.java
  * Created on 2016-09-22
  *
  * Copyright 2015 brainage.net
@@ -18,15 +18,21 @@
  */
 package io.wisestone.file.service;
 
-import io.wisestone.file.domain.File;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.core.NestedRuntimeException;
 
 /**
- * @author <a href="mailto:ms29.seo@gmail.com">ms29.seo</a>
+ * @author ms29.seo
  */
-public interface StorageService {
+public class StorageException extends NestedRuntimeException {
 
-    FileMetadata store(MultipartFile file);
+    private static final long serialVersionUID = -6240456347618819942L;
 
-    void store(File file);
+    public StorageException(String message) {
+        super(message);
+    }
+
+    public StorageException(String msg, Throwable cause) {
+        super(msg, cause);
+    }
+
 }
